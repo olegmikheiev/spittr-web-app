@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.7.RELEASE")
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'sia4.spittr'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: "org.springframework.boot"
+//apply plugin: "io.spring.dependency-management"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+def springVersion = '4.3.25.RELEASE'
+def springBootVersion = "2.1.7.RELEASE"
+
+dependencies {
+    compile "org.springframework:spring-core:${springVersion}"
+    compile "org.springframework:spring-web:${springVersion}"
+    compile "org.springframework:spring-webmvc:${springVersion}"
+
+    compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+
+    compile "javax.servlet:javax.servlet-api:3.1.0"
+    compile "javax.servlet:jstl:1.2"
+
+    compile "org.projectlombok:lombok:1.18.8"
+
+    testCompile "junit:junit:4.12"
+    testCompile "org.springframework:spring-test:${springVersion}"
+    testCompile "org.mockito:mockito-core:3.0.0"
+    testCompile "org.assertj:assertj-core:3.13.2"
+}
+
+war {
+    baseName = 'SpittrApplication'
+    version = '1.0.0-SNAPSHOT'
+}
+
+bootJar {
+    baseName = 'SpittrApplication'
+    version = '1.0.0-SNAPSHOT'
+}
