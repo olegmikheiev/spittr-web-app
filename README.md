@@ -1,3 +1,3 @@
-# Spittr - A Spring Web MVC Application
+# Spittr: A Spring Web MVC Application
 
 Sample Spring 4 application. More details coming soon...
