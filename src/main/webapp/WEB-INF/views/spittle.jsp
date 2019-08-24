@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Spittle <c:out value="${spittle.id}"/></title>
+    <title>Spittle #<c:out value="${spittle.id}"/></title>
 </head>
 <body>
 <div class="spittleView">
