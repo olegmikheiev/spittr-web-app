@@ -1,7 +1,10 @@
 package spittr.web;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import spittr.RestMapping;
@@ -10,6 +13,7 @@ import spittr.data.SpitterRepository;
 
 @Controller
 @RequestMapping(RestMapping.SPITTER)
+@Slf4j
 public class SpitterController {
     private SpitterRepository spitterRepository;
 
@@ -26,7 +30,15 @@ public class SpitterController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String processRegistration(Spitter spitter) {
         spitterRepository.save(spitter);
-        return String.join("", "redirect:", RestMapping.SPITTER, "/", spitter.getUsername());
+        final String redirectUrl = String.join("", "redirect:", RestMapping.SPITTER, "/", spitter.getUsername());
+        log.info("Redirecting user to {}", redirectUrl);
+        return redirectUrl;
+    }
+
+    @RequestMapping(value = "/{username}", method = RequestMethod.GET)
+    public String showSpitterProfile(@PathVariable String username, Model model) {
+        model.addAttribute(spitterRepository.findByUsername(username));
+        return "spitterProfile";
     }
 
 }

@@ -7,6 +7,7 @@
 </head>
 <body>
 <div class="spittleView">
+    <h1>Spittle #<c:out value="${spittle.id}"/></h1>
     <div class="spittleMessage"><c:out value="${spittle.message}"/></div>
     <div class="spittleTime"><c:out value="${spittle.time}"/></div>
     <div class="spittleLocation">

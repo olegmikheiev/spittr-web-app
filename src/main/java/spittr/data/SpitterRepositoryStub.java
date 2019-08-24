@@ -22,14 +22,8 @@ public class SpitterRepositoryStub implements SpitterRepository {
         return newSpitter;
     }
 
-    public Spitter getSpitterBy(long id) {
-        return spitters.stream()
-                .filter(spitter -> id == spitter.getId())
-                .findFirst()
-                .orElse(null);
-    }
-
-    public Spitter getSpitterBy(String username) {
+    @Override
+    public Spitter findByUsername(String username) {
         return spitters.stream()
                 .filter(spitter -> username.equalsIgnoreCase(spitter.getUsername()))
                 .findFirst()

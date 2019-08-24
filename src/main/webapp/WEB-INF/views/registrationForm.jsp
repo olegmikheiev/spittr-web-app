@@ -17,7 +17,7 @@
         </tr>
         <tr>
             <td>Last name:</td>
-            <td><input type="text" name="secondName"/></td>
+            <td><input type="text" name="lastName"/></td>
         </tr>
         <tr>
             <td>Username:</td>
