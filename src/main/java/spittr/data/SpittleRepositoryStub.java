@@ -15,13 +15,12 @@ public class SpittleRepositoryStub implements SpittleRepository {
 
     public SpittleRepositoryStub() {
         stubbedSpittleList = new ArrayList<>();
-        stubbedSpittleList.add(new Spittle("Hey! This is a first spittle", new Date()));
-        stubbedSpittleList.add(new Spittle("And this is a second one!", new Date()));
-        stubbedSpittleList.add(new Spittle("Here we have an example with the place coordinates", new Date(),
+        stubbedSpittleList.add(new Spittle(1L, "Hey! This is a first spittle", new Date()));
+        stubbedSpittleList.add(new Spittle(2L, "And this is a second one!", new Date()));
+        stubbedSpittleList.add(new Spittle(3L, "Here we have an example with the place coordinates", new Date(),
                 35.83125, 48.81271));
-        stubbedSpittleList.add(new Spittle("Trying to test count parameter. No luck. Impression is that parameter" +
+        stubbedSpittleList.add(new Spittle(4L, "Trying to test count parameter. No luck. Impression is that parameter" +
                 "is fully ignored. Or this SpittleRepositoryStub is not used at all... Investigating", new Date()));
-
     }
 
     @Override
@@ -32,5 +31,13 @@ public class SpittleRepositoryStub implements SpittleRepository {
                 .collect(Collectors.toList());
         log.info("Found {} spittles", list.size());
         return list;
+    }
+
+    @Override
+    public Spittle getSpittle(long spittleId) {
+        return stubbedSpittleList.stream()
+                .filter(spittle -> spittleId == spittle.getId())
+                .findFirst()
+                .orElse(null);
     }
 }
