@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Spittle #<c:out value="${spittle.id}"/></title>
+    <link rel="sylesheet" type="text/css" href="<c:url value="/resources/style.css" />">
 </head>
 <body>
 <div class="spittleView">

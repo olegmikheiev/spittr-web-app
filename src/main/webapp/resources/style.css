@@ -1,0 +1,25 @@
+body {
+    margin: 25px;
+}
+
+h1 {
+    text-decoration: underline;
+    text-decoration-color: darkgreen;
+    font-style: italic;
+}
+
+.spittleView {
+
+}
+
+.spittleMessage {
+    font-weight: bold;
+}
+
+.spittleTime {
+
+}
+
+.spittleLocation {
+    font-style: italic;
+}
