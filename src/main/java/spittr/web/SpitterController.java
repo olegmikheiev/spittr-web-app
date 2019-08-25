@@ -4,12 +4,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import spittr.RestMapping;
 import spittr.data.Spitter;
 import spittr.data.SpitterRepository;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping(RestMapping.SPITTER)
@@ -28,7 +31,11 @@ public class SpitterController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String processRegistration(Spitter spitter) {
+    public String processRegistration(@Valid Spitter spitter, Errors errors) {
+        if (errors.hasErrors()) {
+            return "registrationForm";
+        }
+
         spitterRepository.save(spitter);
         final String redirectUrl = String.join("", "redirect:", RestMapping.SPITTER, "/", spitter.getUsername());
         log.info("Redirecting user to {}", redirectUrl);
