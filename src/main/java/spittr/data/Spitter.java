@@ -32,11 +32,15 @@ public class Spitter {
     @Size(min = 1, max = 256)
     private String lastName;
 
-    public Spitter(String username, String password, String firstName, String lastName) {
-        this(null, username, password, firstName, lastName);
+    @NotNull
+    @Size(min = 5, max = 256)
+    private String email;
+
+    public Spitter(String username, String password, String firstName, String lastName, String email) {
+        this(null, username, password, firstName, lastName, email);
     }
 
     public static Spitter createCopyOf(Spitter spitter) {
-        return new Spitter(spitter.username, spitter.password, spitter.firstName, spitter.lastName);
+        return new Spitter(spitter.username, spitter.password, spitter.firstName, spitter.lastName, spitter.email);
     }
 }

@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <%@ page session="false" %>
 
 <html>
@@ -8,24 +9,28 @@
 </head>
 <body>
 <h1>Registration</h1>
-<form method="POST">
+<sf:form method="POST" modelAttribute="spitter">
     <table border="0">
         <tbody>
         <tr>
             <td>First name:</td>
-            <td><input type="text" name="firstName"/></td>
+            <td><sf:input path="firstName"/></td>
         </tr>
         <tr>
             <td>Last name:</td>
-            <td><input type="text" name="lastName"/></td>
+            <td><sf:input path="lastName"/></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><sf:input path="email"/></td>
         </tr>
         <tr>
             <td>Username:</td>
-            <td><input type="text" name="username"/></td>
+            <td><sf:input path="username"/></td>
         </tr>
         <tr>
             <td>Password:</td>
-            <td><input type="password" name="password"/></td>
+            <td><sf:password path="password"/></td>
         </tr>
         <tr>
             <td colspan="2" align="center">
@@ -34,6 +39,6 @@
         </tr>
         </tbody>
     </table>
-</form>
+</sf:form>
 </body>
 </html>

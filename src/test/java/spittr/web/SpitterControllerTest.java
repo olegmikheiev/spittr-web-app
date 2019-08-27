@@ -30,10 +30,11 @@ public class SpitterControllerTest {
         final String lastName = "Bauer";
         final String username = "jbauer";
         final String password = "24hours";
+        final String email = "jbauer@email.com";
 
         SpitterRepository mockRepository = mock(SpitterRepository.class);
-        Spitter unsaved = new Spitter(username, password, firstName, lastName);
-        Spitter saved = new Spitter(24L, username, password, firstName, lastName);
+        Spitter unsaved = new Spitter(username, password, firstName, lastName, email);
+        Spitter saved = new Spitter(24L, username, password, firstName, lastName, email);
         when(mockRepository.save(unsaved)).thenReturn(saved);
 
         SpitterController controller = new SpitterController(mockRepository);
