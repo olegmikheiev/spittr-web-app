@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td>Email:</td>
-            <td><sf:input path="email"/></td>
+            <td><sf:input path="email" type="email"/></td>
         </tr>
         <tr>
             <td>Username:</td>

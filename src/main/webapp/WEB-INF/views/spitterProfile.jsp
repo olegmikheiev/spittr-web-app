@@ -18,6 +18,10 @@
         <td>Last name:</td>
         <td><b><c:out value="${spitter.lastName}"/></b></td>
     </tr>
+    <tr>
+        <td>email:</td>
+        <td><b><c:out value="${spitter.email}"/></b></td>
+    </tr>
     </tbody>
 </table>
 </body>
