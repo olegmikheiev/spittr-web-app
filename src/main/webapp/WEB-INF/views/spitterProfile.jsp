@@ -19,7 +19,7 @@
         <td><b><c:out value="${spitter.lastName}"/></b></td>
     </tr>
     <tr>
-        <td>email:</td>
+        <td>e-mail:</td>
         <td><b><c:out value="${spitter.email}"/></b></td>
     </tr>
     </tbody>
