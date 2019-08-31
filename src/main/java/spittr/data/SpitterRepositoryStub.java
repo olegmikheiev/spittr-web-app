@@ -1,11 +1,11 @@
 package spittr.data;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.LinkedList;
 import java.util.List;
 
-@Component
+@Repository
 public class SpitterRepositoryStub implements SpitterRepository {
     private long spitterId = 0L;
     private List<Spitter> spitters;

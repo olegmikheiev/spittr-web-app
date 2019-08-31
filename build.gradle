@@ -29,6 +29,7 @@ repositories {
 
 def springVersion = '4.3.25.RELEASE'
 def springBootVersion = "2.1.7.RELEASE"
+def thVersion = "3.0.11.RELEASE"
 
 dependencies {
     compile "org.springframework:spring-core:${springVersion}"
@@ -36,6 +37,9 @@ dependencies {
     compile "org.springframework:spring-webmvc:${springVersion}"
 
     compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+
+    compile "org.thymeleaf:thymeleaf:${thVersion}"
+    compile "org.thymeleaf:thymeleaf-spring4:${thVersion}"
 
     compile "javax.servlet:javax.servlet-api:3.1.0"
     compile "javax.servlet:jstl:1.2"

@@ -1,15 +1,15 @@
 package spittr.data;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
 @Slf4j
+@Repository
 public class SpittleRepositoryStub implements SpittleRepository {
     private final List<Spittle> stubbedSpittleList;
 
